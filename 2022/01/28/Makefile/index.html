@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="小华">
+    
+    <title>
+        
+            Makefile |
+        
+        小华的笔记
+    </title>
+    
+<link rel="stylesheet" href="../../../../css/style.css">
+
+    <link rel="shortcut icon" href="../../../../images/fastman.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/fastman.jpg","favicon":"/images/fastman.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                小华的笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../index.html"
+                            >
+                                主页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../index.html">主页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Makefile</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="../../../../images/fastman.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">小华</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-28 22:08:01</span>
+        <span class="mobile">2022-01-28 22:08</span>
+    </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="1-Makefile文件的作用及编写方法"><a href="#1-Makefile文件的作用及编写方法" class="headerlink" title="1. Makefile文件的作用及编写方法"></a>1. Makefile文件的作用及编写方法</h1><h2 id="1-1-Makefile文件的作用"><a href="#1-1-Makefile文件的作用" class="headerlink" title="1.1 Makefile文件的作用"></a>1.1 Makefile文件的作用</h2><p>​        </p>
+<h2 id="1-2-Makefile文件的基本语法"><a href="#1-2-Makefile文件的基本语法" class="headerlink" title="1.2 Makefile文件的基本语法"></a>1.2 Makefile文件的基本语法</h2><h3 id="1-21-makefile作业"><a href="#1-21-makefile作业" class="headerlink" title="1.21 makefile作业"></a>1.21 makefile作业</h3><ul>
+<li><code>make命令</code> 是否重新编译文件取决于文件的保存时间，因此即使是加了行注释也会被重新编译</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要求重新make后只重新编译修改过的文件</span></span><br><span class="line">objects = test1.o test2.o test3.o</span><br><span class="line"><span class="section">test:<span class="variable">$(objects)</span></span></span><br><span class="line">	gcc -Wall <span class="variable">$(objects)</span> -o test</span><br><span class="line">	echo <span class="string">&quot;编译成功&quot;</span></span><br><span class="line">	rm -f <span class="variable">$(objects)</span><span class="comment">#可要可不要</span></span><br><span class="line"><span class="section">test1.o:test1.c</span></span><br><span class="line">	gcc -c test1.c</span><br><span class="line"><span class="section">test2.o:test2.c</span></span><br><span class="line">	gcc -c test2.c</span><br><span class="line"><span class="section">test3.o:test3.c</span></span><br><span class="line">	gcc -c test3.c</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -f test <span class="variable">$(objects)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>指定<code>test123.o</code>文件的依赖项包含<code>test.h</code>，便可以达到要求 </li>
+<li>下面还用到了makefile的自动推导功能，将目标<code>%.o</code> 匹配默认规则，即利用<code>gcc -c %.c</code> 来自动生成 <code>%.o</code>目标。</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要求改动.h文件后重新make后所有文件重新编译</span></span><br><span class="line">objects =   test1.o test2.o test3.o</span><br><span class="line"><span class="section">test:  $&#123;objects&#125; test.h</span></span><br><span class="line">	gcc -Wall $&#123;objects&#125; -o test</span><br><span class="line"><span class="section">test1.o:test.h #注意这些.o目标都没有命令列表，自动推导出来</span></span><br><span class="line"><span class="section">test2.o:test.h</span></span><br><span class="line"><span class="section">test3.o:test.h</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -f test $&#123;objects&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自动化编译所有目录<ul>
+<li><code>.PHONY</code>作用：伪目标，避免命令和目录下实际文件名冲突造成无法执行</li>
+<li><code>@</code> 执行 shell 命令时不会回显</li>
+<li><code>\</code>用于连接每个 shell 语句，在一个进程中执行</li>
+<li><code>$$</code>引用 shell 内部的变量，<code>$</code>引用 makefile 文件中的变量</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#自动执行所有目录下的所有makefile</span></span><br><span class="line">DIRS= <span class="variable">$(<span class="built_in">shell</span> ls -F | grep /$)</span>   </span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@for i in <span class="variable">$(DIRS)</span>;do\</span><br><span class="line">		make -C $$i;\</span><br><span class="line">		done</span><br><span class="line">.PHONY= clean</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	@for i in <span class="variable">$(DIRS)</span>;do\</span><br><span class="line">		echo <span class="string">&quot;delete&quot;</span> $$i;\</span><br><span class="line">	done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>make 原理</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">target:main.o test.o</span></span><br><span class="line">	gcc -o target main.o test.o</span><br><span class="line"><span class="section">目标:依赖 </span></span><br><span class="line">	命令列表...</span><br></pre></td></tr></table></figure>
+
+<p><code>make</code> 会在当前目录下找名字叫 <em>Makefile</em> 或 <em>makefile</em> 的文件。</p>
+<p>makefile 文件中有很多__目标__，如果当前目录下存在该文件，且该文件没有其他依赖，则认为该__目标__不需要更新，如果不存在该文件，就会执行 makfile 文件中目标下的命令列表来更新目标。</p>
+</li>
+</ul>
+<h2 id="1-3-Make-技巧"><a href="#1-3-Make-技巧" class="headerlink" title="1.3  Make 技巧"></a>1.3  Make 技巧</h2><ul>
+<li><code>make -C</code> 将工作目录切换到指定位置，用于上级make调用子目录中的makefile，后面加上子目录的名字即可</li>
+<li></li>
+</ul>
+<h1 id="2-程序的静态编译和动态编译"><a href="#2-程序的静态编译和动态编译" class="headerlink" title="2. 程序的静态编译和动态编译"></a>2. 程序的静态编译和动态编译</h1><h2 id="2-1-Linux下的动态编译"><a href="#2-1-Linux下的动态编译" class="headerlink" title="2.1 Linux下的动态编译"></a>2.1 Linux下的动态编译</h2><h3 id="2-11-动态编译"><a href="#2-11-动态编译" class="headerlink" title="2.11 动态编译"></a>2.11 动态编译</h3><p>__动态编译__的可执行文件需要附带动态链接库。__动态链接__可以使得进程调用其可执行文件外的函数，即动态链接库中的函数。反之__静态编译__则是把静态链接库在编译的链接阶段直接链接到可执行文件中去。</p>
+<h3 id="2-12-gcc动态编译"><a href="#2-12-gcc动态编译" class="headerlink" title="2.12 gcc动态编译"></a>2.12 gcc动态编译</h3><p>_应该叫动态链接更好？_。编译==默认==动态链接，即使用对应的动态链接库<code>(.dll .so)</code>生成可执行文件。</p>
+<h3 id="2-13-g-动态编译"><a href="#2-13-g-动态编译" class="headerlink" title="2.13 g++动态编译"></a>2.13 g++动态编译</h3><p>同理</p>
+<h3 id="2-14-如何查找可执行文件所依赖的动态链接库"><a href="#2-14-如何查找可执行文件所依赖的动态链接库" class="headerlink" title="2.14 如何查找可执行文件所依赖的动态链接库"></a>2.14 如何查找可执行文件所依赖的动态链接库</h3><p><code>ldd+可执行文件名</code>：查找可执行文件所依赖的动态链接库</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220116121423204.png" alt="image-20220116121423204"></p>
+<h2 id="2-2-Linux-gcc静态编译"><a href="#2-2-Linux-gcc静态编译" class="headerlink" title="2.2 Linux gcc静态编译"></a>2.2 Linux gcc静态编译</h2><p><em>静态编译，就是编译器在编译可执行文件的时候，将可执行文件需要调用的对应<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%9D%99%E6%80%81%E5%BA%93/8955694">静态库<i class="fas fa-external-link-alt"></i></a>(.a或.lib)中的部分提取出来，链接到可执行文件中去，使可执行文件在运行的时候不依赖于动态链接库。与动态编译的区别:动态编译的<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6">可执行文件<i class="fas fa-external-link-alt"></i></a>需要附带一个的<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/100352">动态链接库<i class="fas fa-external-link-alt"></i></a>。在执行时，需要调用其对应动态链接库中的命令。所以其优点一方面是缩小了执行文件本身的体积，另一方面是加快了编译速度，节省了系统资源。缺点一是哪怕是很简单的程序，只用到了链接库中的一两条命令，也需要附带一个相对庞大的链接库；二是如果其他计算机上没有安装对应的<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%90%E8%A1%8C%E5%BA%93">运行库<i class="fas fa-external-link-alt"></i></a>，则用动态编译的可执行文件就不能运行。</em></p>
+<ul>
+<li>使用静态链接库，<code>.lib .a</code>。</li>
+</ul>
+<p><code>gcc -static</code></p>
+<ul>
+<li>查看动态链接版本和静态链接版本的可执行文件的字节数：</li>
+</ul>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220116123439053.png" alt="image-20220116123439053"></p>
+<h2 id="2-3-Linux-c-静态编译"><a href="#2-3-Linux-c-静态编译" class="headerlink" title="2.3 Linux c++静态编译"></a>2.3 Linux c++静态编译</h2><p>该Centos并不能直接静态编译c++。需要安装__libstd++-static__，利用</p>
+<p><code>wget http://mirror.centos.org/centos/8/PowerTools/x86_64/os/Packages/libstdc++-static-8.5.0-4.el8_5.x86_64.rpm </code></p>
+<p>下载安装包，<code>rpm -ivh libstdc++-static-8.5.0-4.el8_5.x86_64.rpm --nodeps</code>安装。</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220116131947709.png" alt="image-20220116131947709"></p>
+<h2 id="2-4-打包与压缩"><a href="#2-4-打包与压缩" class="headerlink" title="2.4 打包与压缩"></a>2.4 打包与压缩</h2><p>菜鸟教程[tar](<a class="link" target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-tar.html">Linux tar 命令 | 菜鸟教程 (runoob.com)<i class="fas fa-external-link-alt"></i></a>)用法。</p>
+<p><code>tar -jcfv</code>：<code>-j</code>压缩，<code>-c</code>，<code>-f</code>：后加归档名，<code>-v</code>：显示压缩过程</p>
+<p><code>tar -cfv</code>：只打包不压缩，可以看大小的区别</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220116142619749.png" alt="image-20220116142619749"></p>
+<h1 id="3-动态链接库的编译和使用"><a href="#3-动态链接库的编译和使用" class="headerlink" title="3. 动态链接库的编译和使用"></a>3. 动态链接库的编译和使用</h1><ul>
+<li><code>gcc -shared -fPIC -o libxxx.so xxx0.c xxx1.c</code><ul>
+<li><code>fPIC</code> 位置无关，可以在其他地方使用动态链接库<code>.so</code>文件。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-Linux下动态链接库"><a href="#3-1-Linux下动态链接库" class="headerlink" title="3.1 Linux下动态链接库"></a>3.1 Linux下动态链接库</h2><p>__动态链接库__可以实现模块共用，多个程序可以共用一个动态链接库，而不用像静态链接那样每个使用者都要完整链接一份库。实现了代码重用。</p>
+<p>使用动态链接库可以更为容易地将更新应用于各个<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A8%A1%E5%9D%97">模块<i class="fas fa-external-link-alt"></i></a>，而不会影响该程序的其他部分。</p>
+<h2 id="3-2-动态链接库作业"><a href="#3-2-动态链接库作业" class="headerlink" title="3.2 动态链接库作业"></a>3.2 动态链接库作业</h2><h3 id="3-21-使用动态链接库"><a href="#3-21-使用动态链接库" class="headerlink" title="3.21 使用动态链接库"></a>3.21 使用动态链接库</h3><ol>
+<li><p><code>gcc -shared -fPIC test1.c -o libfun.so</code>  </p>
+</li>
+<li><p><code>gcc -o test ./libfun.so test2.c</code>  或者</p>
+</li>
+</ol>
+<p>​    <code>gcc -o test -L. libfun.so test2.c</code>+<code>export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH</code></p>
+<p>前者是==绝对路径==编译，若采用后者，如果没在环境变量<code>LD_LIBRARY_PATH</code> 上加上程序所需动态链接库的所在目录，那么运行这个程序时就会出现错误。运行时可执行文件找不到动态链接库。因此需要把当前动态链接库的目录加入系统环境变量中。</p>
+<h3 id="3-22-作业"><a href="#3-22-作业" class="headerlink" title="3.22 作业"></a>3.22 作业</h3><h4 id="2-2-gcc"><a href="#2-2-gcc" class="headerlink" title="2.2 (gcc)"></a>2.2 (gcc)</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">test.o:test2.c libfun.so</span></span><br><span class="line">	gcc -o test ./libfun.so test2.c</span><br><span class="line"><span class="section">libfun.so:test1.c</span></span><br><span class="line">	gcc -shared -fPIC -o libfun.so test1.c</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	@rm *.so test</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-c"><a href="#2-3-c" class="headerlink" title="2.3 (c++)"></a>2.3 (c++)</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">test.o:test2.cpp libfun.so</span></span><br><span class="line">	c++ -o test ./libfun.so test2.cpp</span><br><span class="line"><span class="section">libfun.so:test1.c</span></span><br><span class="line">	c++ -shared -fPIC -o libfun.so test1.cpp</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	@rm *.so test</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-总makefile"><a href="#2-4-总makefile" class="headerlink" title="2.4 总makefile"></a>2.4 总makefile</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DIRS=<span class="variable">$(<span class="built_in">shell</span> ls-F|grep /$)</span></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">	@for i in <span class="variable">$(DIRS)</span>; do\</span><br><span class="line">		make -C $$i;\</span><br><span class="line">		done</span><br><span class="line">.PHONY=clean</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	@for i in <span class="variable">$(DIRS)</span>; do echo <span class="string">&quot;delete&quot;</span> $$i; make -C $$i clean; done</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="4-静态链接库的编译和使用"><a href="#4-静态链接库的编译和使用" class="headerlink" title="4. 静态链接库的编译和使用"></a>4. 静态链接库的编译和使用</h1><p><code>ar rcs libxxx.a xxx0.o xxx1.o xxx2.o</code></p>
+<h2 id="4-1-Linux下静态链接库"><a href="#4-1-Linux下静态链接库" class="headerlink" title="4.1 Linux下静态链接库"></a>4.1 Linux下静态链接库</h2><p>静态链接库就是你使用的.<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/lib%E6%96%87%E4%BB%B6/2108657">lib文件<i class="fas fa-external-link-alt"></i></a>，库中的代码最后需要连接到你的可执行文件中去，所以静态连接的可<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%89%A7%E8%A1%8C/3012">执行<i class="fas fa-external-link-alt"></i></a>文件一般比较大一些。</p>
+<h2 id="4-2-使用静态链接库"><a href="#4-2-使用静态链接库" class="headerlink" title="4.2 使用静态链接库"></a>4.2 使用静态链接库</h2><h3 id="4-21-创建静态链接库文件"><a href="#4-21-创建静态链接库文件" class="headerlink" title="4.21 创建静态链接库文件"></a>4.21 创建静态链接库文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test1.c</span><br><span class="line">ar rcs libfun.a test1.o</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-22-使用静态链接库"><a href="#4-22-使用静态链接库" class="headerlink" title="4.22 使用静态链接库"></a>4.22 使用静态链接库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o test test2.c libfun.a</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="5-编译"><a href="#5-编译" class="headerlink" title="5 编译"></a>5 编译</h1><h2 id="5-1-预处理"><a href="#5-1-预处理" class="headerlink" title="5.1 预处理"></a>5.1 预处理</h2><p><code>gcc -E xxx.c</code></p>
+<p>将宏定义在每个位置做替换，并展开include的头文件内容。</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220116223918511.png" alt="image-20220116223918511"> </p>
+<p><code>test3. h</code>文件中声明了两个变量、一个函数，并且将<code>test3.c</code> 中的宏定义<code>N=3.13</code>在指定位置替换。</p>
+<h2 id="5-2-编译"><a href="#5-2-编译" class="headerlink" title="5.2 编译"></a>5.2 编译</h2><p><code>gcc -S xxx.c</code> 生成<code>.s</code>文件。（编译生成的汇编代码）</p>
+<h2 id="5-3-汇编"><a href="#5-3-汇编" class="headerlink" title="5.3 汇编"></a>5.3 汇编</h2><p><code>gcc -c xxx.c</code> 把汇编代码中的字符替换成二进制码，从而形成2进制的<code>.o</code>目标文件。</p>
+<h2 id="5-4-链接"><a href="#5-4-链接" class="headerlink" title="5.4 链接"></a>5.4 链接</h2><h1 id="随便"><a href="#随便" class="headerlink" title="随便"></a>随便</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service smb restartls -l #查看文件时间，大小</span><br></pre></td></tr></table></figure>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li> 静态链接库使用默认的动态链接方式编译，删除<code>.a</code>文件后依然可以正常运行</li>
+</ul>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="../%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">守护进程</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="../https%E5%8A%A0%E5%AF%86/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">https加密</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">小华</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Makefile%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8F%8A%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95"><span class="nav-text">1. Makefile文件的作用及编写方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Makefile%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">1.1 Makefile文件的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Makefile%E6%96%87%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">1.2 Makefile文件的基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-21-makefile%E4%BD%9C%E4%B8%9A"><span class="nav-text">1.21 makefile作业</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Make-%E6%8A%80%E5%B7%A7"><span class="nav-text">1.3  Make 技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91%E5%92%8C%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2. 程序的静态编译和动态编译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Linux%E4%B8%8B%E7%9A%84%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2.1 Linux下的动态编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-11-%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2.11 动态编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-12-gcc%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2.12 gcc动态编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-13-g-%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2.13 g++动态编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-14-%E5%A6%82%E4%BD%95%E6%9F%A5%E6%89%BE%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E6%89%80%E4%BE%9D%E8%B5%96%E7%9A%84%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">2.14 如何查找可执行文件所依赖的动态链接库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Linux-gcc%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2.2 Linux gcc静态编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Linux-c-%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91"><span class="nav-text">2.3 Linux c++静态编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E6%89%93%E5%8C%85%E4%B8%8E%E5%8E%8B%E7%BC%A9"><span class="nav-text">2.4 打包与压缩</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-text">3. 动态链接库的编译和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Linux%E4%B8%8B%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">3.1 Linux下动态链接库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%BD%9C%E4%B8%9A"><span class="nav-text">3.2 动态链接库作业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-21-%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">3.21 使用动态链接库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-22-%E4%BD%9C%E4%B8%9A"><span class="nav-text">3.22 作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-gcc"><span class="nav-text">2.2 (gcc)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-c"><span class="nav-text">2.3 (c++)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-%E6%80%BBmakefile"><span class="nav-text">2.4 总makefile</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-text">4. 静态链接库的编译和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Linux%E4%B8%8B%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">4.1 Linux下静态链接库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">4.2 使用静态链接库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-21-%E5%88%9B%E5%BB%BA%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-text">4.21 创建静态链接库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-22-%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-text">4.22 使用静态链接库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E7%BC%96%E8%AF%91"><span class="nav-text">5 编译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">5.1 预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E7%BC%96%E8%AF%91"><span class="nav-text">5.2 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E6%B1%87%E7%BC%96"><span class="nav-text">5.3 汇编</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E9%93%BE%E6%8E%A5"><span class="nav-text">5.4 链接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E4%BE%BF"><span class="nav-text">随便</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text">问题</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

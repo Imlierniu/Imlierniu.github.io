@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="小华">
+    
+    <title>
+        
+            二分法 |
+        
+        小华的笔记
+    </title>
+    
+<link rel="stylesheet" href="../../../../css/style.css">
+
+    <link rel="shortcut icon" href="../../../../images/fastman.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/fastman.jpg","favicon":"/images/fastman.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                小华的笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../index.html"
+                            >
+                                主页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../index.html">主页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">二分法</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="../../../../images/fastman.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">小华</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-29 00:07:34</span>
+        <span class="mobile">2022-01-29 00:07</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="../../../../categories/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="../../../../tags/leetcode/">leetcode</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h1><h2 id="这里备注一下各种情况下的二分法使用"><a href="#这里备注一下各种情况下的二分法使用" class="headerlink" title="这里备注一下各种情况下的二分法使用"></a>这里备注一下各种情况下的二分法使用</h2><ol>
+<li><p>循环条件<code>while(left&lt;right)</code>还是<code>while(left&lt;=right)</code><br>取决于<code>right</code>所取的初值是<code>length()</code>还是<code>length()-1</code>，以及右区间收缩时<code>right=m</code>还是<code>right=m+1</code>；即把右边界是开区间<code>[left,right)</code>还是闭区间<code>[left,right]</code>。</p>
+</li>
+<li><p>一般二分法，查找数组中<code>==target</code>的元素位置</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(left&lt;=right)&#123;<span class="comment">//寻找==target的值</span></span><br><span class="line">    m=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(times[m]&gt;target)</span><br><span class="line">        right=m<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(times[m]&lt;target)</span><br><span class="line">        left=m+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>;<span class="comment">//未查到</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>条件二分法:比如此题(leetcode991)，查找第一个大于<code>target</code>的值，将结果<code>-1</code>，就是所需要的 <strong>不大于target的最大值</strong> 。都属于==搜索右区间==。</p>
+<ol>
+<li><p>备注标号提交1：<em>采用右侧开区间搜索</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开区间搜索</span></span><br><span class="line"><span class="comment">//此二分法用于寻找大于target的第一个数，然后减去1是为了满足题意</span></span><br><span class="line"><span class="keyword">while</span>(left&lt;right)&#123;<span class="comment">//注意循环条件</span></span><br><span class="line">    m=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(times[m]&lt;=t)&#123;</span><br><span class="line">        left=m+<span class="number">1</span>;  <span class="comment">//要找大于target的数，因此&lt;=的都进行左区间收缩</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;        </span><br><span class="line">        right=m;<span class="comment">//右区间收缩，由于右侧是开区间，right取m即是跳过了m</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return left-1;//按991题意要-1</span></span><br><span class="line"><span class="keyword">return</span> left;</span><br><span class="line"><span class="comment">/*特殊情况：</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &gt;target,返回left的初值0（是一种错误）</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &lt;=target，返回left==length(),数组外</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+<li><p>提交2：<em>采用右侧闭区间搜索</em> ,但是<code>提交1</code>和<code>提交2</code>的左右边界收缩条件一致，因为要找大于<code>taget</code>的最小值，所以遇到<code>&lt;=</code>就左收缩，否则右收缩，区别在于右收缩的方式是<code>m</code>还是<code>m-1</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//闭区间搜索</span></span><br><span class="line"><span class="keyword">while</span>(left&lt;=right)&#123;<span class="comment">//此二分法用于寻找大于target的第一个数，然后减去1是为了满足题意</span></span><br><span class="line">    m=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(times[m]&lt;=t)&#123;</span><br><span class="line">        left=m+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        right=m<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return left-1;</span></span><br><span class="line"><span class="keyword">return</span> left;</span><br><span class="line"><span class="comment">/*退出循环时right=left-1，且看前一步left==right是left右移造成的还是right左移造成的，发现无所谓，	*如果是第一种情况，说明前一步time[left]==time[right]&lt;=target,所以要返回的一定是left右移之后的值，也就是现在的left值。</span></span><br><span class="line"><span class="comment">	*如果是第二种情况，说明前一步time[left]==time[right]&gt;target,right要左移动，而left此时正好是要找的值。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*特殊情况：</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &gt;target,返回left的初值0（是一种错误）</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &lt;=target，返回left==length(),数组外</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//与开区间一致</span></span><br></pre></td></tr></table></figure></li>
+<li><p>注意这种寻找右边界的一定要返回<code>left</code>而寻找左边界要返回<code>right</code>。由于<code>while(left&lt;right)</code>的方式，当<code>[a,a)</code>搜索区间已经为空，此时<code>left==right</code>也刚好退出循环，所以返回<code>left</code>和<code>right</code>并无致。而当<code>while(left&lt;=right)</code>方式时，搜索区间<code>[a,a]</code>时并不为空，所以只有当<code>right&lt;left</code>时才为空，</p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(left&lt;=right)&#123;<span class="comment">//此二分法用于寻找大于target的第一个数，</span></span><br><span class="line">    m=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(times[m]&gt;t)&#123;</span><br><span class="line">        right=m<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        left=m+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> left<span class="number">-1</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>条件二分法：==搜索左区间==，寻找最后一个小于<code>target</code>的值的下标</p>
+<ol>
+<li><p>开区间搜索</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开区间搜索</span></span><br><span class="line"><span class="comment">//此二分法用于寻找小于target的最后一个数</span></span><br><span class="line"><span class="keyword">while</span>(left&lt;right)&#123;<span class="comment">//注意循环条件</span></span><br><span class="line">    m=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(times[m]&gt;=t)&#123;</span><br><span class="line">        right=m;  <span class="comment">//要找小于target的数，因此&gt;=的都进行右区间收缩</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;        </span><br><span class="line">        left=m+<span class="number">1</span>;<span class="comment">//左区间收缩</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> right;<span class="comment">//注意返回值是right</span></span><br><span class="line"><span class="comment">/*特殊情况：</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &lt;target,返回right的初值,即time.length(),数组外</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &gt;=target，返回right==0</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+<li><p>闭区间所搜</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//闭区间搜索</span></span><br><span class="line"><span class="comment">//此二分法用于寻找小于target的最后一个数</span></span><br><span class="line"><span class="keyword">while</span>(left&lt;=right)&#123;<span class="comment">//注意循环条件</span></span><br><span class="line">    m=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(times[m]&gt;=t)&#123;</span><br><span class="line">        right=m<span class="number">-1</span>;  <span class="comment">//要找小于target的数，因此&gt;=的都进行右区间收缩</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;        </span><br><span class="line">        left=m+<span class="number">1</span>;<span class="comment">//左区间收缩</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> right;<span class="comment">//注意返回值是right</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*特殊情况：</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &lt;target,返回right的初值,即末尾元素对应的下标(即time.length()-1)</span></span><br><span class="line"><span class="comment">	*time[]中所有元素都 &gt;=target，返回right==-1</span></span><br><span class="line"><span class="comment">	与开区间错了一位。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<h2 id="右区间搜索"><a href="#右区间搜索" class="headerlink" title="右区间搜索"></a>右区间搜索</h2><p><code>&lt;=</code>同属左边界收缩，<code>&gt;</code>属于右边界收缩。返回<code>left</code>（包含等号的条件是左边界收缩，因此返回左边界）</p>
+<p>什么符号单独（不与等号同收缩），就找满足什么符号条件的值，比如<code>&gt;</code>单独，就找<code>&gt;target</code>的最小值。</p>
+</blockquote>
+<blockquote>
+<h2 id="左区间搜索"><a href="#左区间搜索" class="headerlink" title="左区间搜索"></a>左区间搜索</h2><p><code>&gt;=</code>同属右边界收缩，<code>&lt;</code>属于左边界收缩。返回<code>right</code>，由于循环条件的不同，<code>right</code>初值不同，因此返回时要注意讨论特殊情况，见上面代码块。</p>
+<p>右区间搜索则不需要考虑，因为<code>left</code>初值永远是0。</p>
+</blockquote>
+<ul>
+<li><p>注意，leetcode991只能查找目标值之前或者等于目标时间的值，即<code>&lt;=</code>，所以是右区间搜索结果-1。而不能用左区间搜索+1。当然也可以用左区间搜索，只要把条件修改为寻找<code>&lt;=target</code>的最大值即可，此时<code>&lt;=</code>左边界收缩</p>
+</li>
+<li><p>==结论==:左区间所搜，<code>left</code>的条件就是要找的条件（究竟是<code>&lt;</code>还是<code>&lt;=</code>取决于<code>left</code>的条件）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> left=<span class="number">0</span>,right=times.<span class="built_in">size</span>()<span class="number">-1</span>,m;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">            m=(left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(times[m]&gt;t)&#123;  <span class="comment">//注意没有等号，等号在下面的条件中</span></span><br><span class="line">                right=m<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                left=m+<span class="number">1</span>;<span class="comment">//</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> right;<span class="comment">//可以发现竟然与右区间搜索一致，这里即使991题的答案，不用再减1了</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="../../../../tags/leetcode/">#leetcode</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="../../28/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">守护进程</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">小华</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95"><span class="nav-text">二分法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E9%87%8C%E5%A4%87%E6%B3%A8%E4%B8%80%E4%B8%8B%E5%90%84%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%8B%E7%9A%84%E4%BA%8C%E5%88%86%E6%B3%95%E4%BD%BF%E7%94%A8"><span class="nav-text">这里备注一下各种情况下的二分法使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E5%8C%BA%E9%97%B4%E6%90%9C%E7%B4%A2"><span class="nav-text">右区间搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E5%8C%BA%E9%97%B4%E6%90%9C%E7%B4%A2"><span class="nav-text">左区间搜索</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="小华">
+    
+    <title>
+        
+            守护进程 |
+        
+        小华的笔记
+    </title>
+    
+<link rel="stylesheet" href="../../../../css/style.css">
+
+    <link rel="shortcut icon" href="../../../../images/fastman.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/fastman.jpg","favicon":"/images/fastman.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                小华的笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../index.html"
+                            >
+                                主页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../index.html">主页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">守护进程</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="../../../../images/fastman.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">小华</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-28 22:08:09</span>
+        <span class="mobile">2022-01-28 22:08</span>
+    </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>5.4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>19 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h1><h1 id="1-正常程序的后台运行及前后台切换"><a href="#1-正常程序的后台运行及前后台切换" class="headerlink" title="1. 正常程序的后台运行及前后台切换"></a>1. 正常程序的后台运行及前后台切换</h1><h2 id="1-1-示例程序"><a href="#1-1-示例程序" class="headerlink" title="1.1 示例程序"></a>1.1 示例程序</h2><p>Linux下间隔5s输出一句话的死循环程序。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">1752846</span>);</span><br><span class="line">	sleep(<span class="number">5</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-后台运行"><a href="#1-2-后台运行" class="headerlink" title="1.2 后台运行"></a>1.2 后台运行</h2><h3 id="1-2-1-开始时设定为后台运行"><a href="#1-2-1-开始时设定为后台运行" class="headerlink" title="1.2.1 开始时设定为后台运行"></a>1.2.1 开始时设定为后台运行</h3><p><code>命令+&amp;</code> 程序运行时直接在后台进行，但是依然会在前台显示，此时shell命令行功能依然可用，但是显示会受影响。若不加<code>&amp;</code>，即默认在前台执行，此时无法使用shell命令工具。</p>
+<h3 id="1-2-2-作业和进程"><a href="#1-2-2-作业和进程" class="headerlink" title="1.2.2 作业和进程"></a>1.2.2 作业和进程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">shell ：命令解释器，其实就是一个脚本语言解释器，有很多种(bash,ash,tcsh等),最常用的是bash.</span><br><span class="line"></span><br><span class="line">job(作业): 是相对shell 来说的，在shell中执行一条命令，实际上就是提交了一个job,只不过有的job需要运行很长时间，有的job很快就结束。</span><br><span class="line"></span><br><span class="line">进程：命令经过shell解析后，交给系统内核执行，会fork出很多进程，他们同属于登录shell的进程组，如下图。</span><br><span class="line"></span><br><span class="line">！！！所以作业是shell里面的一个概念，jobs命令只能查看当前shell自己的job，不同的shell 之间相互隔离。我们在shell里执行一条命令的时候就开启了一个作业，一个作业对应着系统中的一个进程组，如果作业中的某个进程又创建了子进程，则子进程不属于作业。</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-3-在启动后切换到后台运行"><a href="#1-2-3-在启动后切换到后台运行" class="headerlink" title="1.2.3 在启动后切换到后台运行"></a>1.2.3 在启动后切换到后台运行</h3><p><code>ctrl+z</code>将进程挂起，<code>bg + % + 作业号</code>将挂起的进程放到后台继续执行。</p>
+<p><code>ctrl+c</code> 将前台进程终止。</p>
+<p><code>jobs</code> 查看后台执行的进程。</p>
+<p><code>fg + % + 作业号</code> 将后台进程放到前台执行。</p>
+<p><code>kill + % + 作业号</code> 杀死后台进程。</p>
+<ul>
+<li>放在前台执行的程序可以直接<code>ctrl+c</code>结束掉，而后台运行的程序需要通过<code>kill + % + n</code>杀死。当前台运行程序时，命令行功能无法使用。</li>
+</ul>
+<ol>
+<li><p>父进程查看</p>
+<p><code>ps -p +进程号 + -l</code>：<code>PPID</code>就是父进程号。</p>
+<p>当前子进程的父进程号就是终端的进程号。</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220117175726875.png" alt="image-20220117175726875"></p>
+</li>
+<li><p>再登陆另一个控制台，如何查看这两个进程的信息。</p>
+<p>此时通过<code>jobs</code>无法查看，因为作业shell隔离。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jobs是查看当前后台作业（进程），是获取本次bash下的后台作业。​​​​</span><br><span class="line">当本次终端退出后，后台作业变成孤儿进程，孤儿进程有系统父进程接管。</span><br><span class="line">当再次连接终端时，原作业与当前终端，不存在关系父子关系，故看不到进程。</span><br><span class="line">但是原作业，会在系统中一致运行，直到完成或被停止。</span><br><span class="line">这就是为什么终端退出后，jobs看不到的原因了</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>ps -a</code></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220117165254725.png" alt="image-20220117165254725"></p>
+</li>
+<li><p><code>ctrl+D</code>退出控制台后，在另一个控制台查看。</p>
+<p><code>jobs</code>无显示，说明查看不了，<code>ps a</code>也看不到进程了，说明进程没了。<code>logout</code> 也是如此。</p>
+<p>此时利用子进程号查看父进程<code>PPID=1</code>?</p>
+<ul>
+<li>下图是关闭shell前 / 后</li>
+</ul>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220117174554405.png" alt="image-20220117174554405"></p>
+</li>
+<li><p>如果通过<code>exit</code>则依然可以查看到进程，只是进程状态是<code>T:暂停状态</code>。<code>ctrl+z</code>挂起前台进程也会显示状态<code>T</code>。</p>
+</li>
+<li><p>退出终端后，打印信息是否能出现在新登录的终端上？</p>
+<p>==不可以==，一般的进程都是。？</p>
+<p>shell关闭时会向进程组所有进程发送<code>sighup</code>信号。</p>
+<p>当用户注销或者网络中断时，终端后收到SIGHUP信号，从而关闭其所有子进程，以上两种方式会随着终端的关闭而退出，如果我们需要作业在后台执行并不受终端退出的影响，可以用<code>nohup+命令+&amp;</code>方式。<code>nohup</code>命令会忽略__SIGHUP__信号，从而终端退出时不会影响到后台作业。</p>
+</li>
+<li><p><code>nohup</code>: no hang up。</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220117174727054.png" alt="image-20220117174727054"></p>
+</li>
+</ol>
+<h3 id="1-24问题"><a href="#1-24问题" class="headerlink" title="1.24问题"></a>1.24问题</h3><ul>
+<li><code>nohup</code>无效，即关闭shell进程就被杀死了</li>
+<li>shell、terminal、bash、console区别</li>
+<li><code>ctrl+D exit logout </code>区别</li>
+<li>父进程号<code>PPID=1</code>就是僵尸进程?</li>
+</ul>
+<h1 id="2-守护进程的作用、用途、父进程标识的特点"><a href="#2-守护进程的作用、用途、父进程标识的特点" class="headerlink" title="2. 守护进程的作用、用途、父进程标识的特点"></a>2. 守护进程的作用、用途、父进程标识的特点</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> 创建子进程，父进程退出</span><br><span class="line"></span><br><span class="line">　　这是编写守护进程的第一步。由于守护进程是脱离控制终端的，因此，完成第一步后就会在Shell终端里造成一程序已经运行完毕的假象。之后的所有工作都在子进程中完成，而用户在Shell终端里则可以执行其他命令，从而在形式上做到了与控制终端的脱离。</span><br><span class="line"></span><br><span class="line">　　在Linux中父进程先于子进程退出会造成子进程成为孤儿进程，而每当系统发现一个孤儿进程是，就会自动由1号进程（init）收养它，这样，原先的子进程就会变成init进程的子进程。</span><br><span class="line"></span><br><span class="line">​ 在子进程中创建新会话</span><br><span class="line"></span><br><span class="line">　　这个步骤是创建守护进程中最重要的一步，虽然它的实现非常简单，但它的意义却非常重大。在这里使用的是系统函数setsid，在具体介绍setsid之前，首先要了解两个概念：进程组和会话期</span><br><span class="line">　　进程组：是一个或多个进程的集合。进程组有进程组ID来唯一标识。除了进程号（PID）之外，进程组ID也是一个进程的必备属性。每个进程组都有一个组长进程，其组长进程的进程号等于进程组ID。且该进程组ID不会因组长进程的退出而受到影响。</span><br><span class="line">　　​ 会话周期：会话期是一个或多个进程组的集合。通常，一个会话开始与用户登录，终止于用户退出，在此期间该用户运行的所有进程都属于这个会话期。</span><br><span class="line">　　接下来就可以具体介绍setsid的相关内容：</span><br><span class="line">　　（1）setsid函数作用：</span><br><span class="line">　　setsid函数用于创建一个新的会话，并担任该会话组的组长。调用setsid有下面的3个作用：</span><br><span class="line">　　让进程摆脱原会话的控制</span><br><span class="line">　　让进程摆脱原进程组的控制</span><br><span class="line">　　让进程摆脱原控制终端的控制</span><br><span class="line"></span><br><span class="line">　　那么，在创建守护进程时为什么要调用setsid函数呢？由于创建守护进程的第一步调用了fork函数来创建子进程，再将父进程退出。由于在调用了fork函数时，子进程全盘拷贝了父进程的会话期、进程组、控制终端等，虽然父进程退出了，但会话期、进程组、控制终端等并没有改变，因此，还还不是真正意义上的独立开来，而setsid函数能够使进程完全独立出来，从而摆脱其他进程的控制。</span><br><span class="line"></span><br><span class="line">​ 改变当前目录为根目录</span><br><span class="line"></span><br><span class="line">　　这一步也是必要的步骤。使用fork创建的子进程继承了父进程的当前工作目录。由于在进程运行中，当前目录所在的文件系统（如“/mnt/usb”）是不能卸载的，这对以后的使用会造成诸多的麻烦（比如系统由于某种原因要进入单用户模式）。因此，通常的做法是让&quot;/&quot;作为守护进程的当前工作目录，这样就可以避免上述的问题，当然，如有特殊需要，也可以把当前工作目录换成其他的路径，如/tmp。改变工作目录的常见函数式chdir。</span><br><span class="line"></span><br><span class="line">​重设文件权限掩码</span><br><span class="line"></span><br><span class="line">　　文件权限掩码是指屏蔽掉文件权限中的对应位。比如，有个文件权限掩码是050，它就屏蔽了文件组拥有者的可读与可执行权限。由于使用fork函数新建的子进程继承了父进程的文件权限掩码，这就给该子进程使用文件带来了诸多的麻烦。因此，把文件权限掩码设置为0，可以大大增强该守护进程的灵活性。设置文件权限掩码的函数是umask。在这里，通常的使用方法为umask(0)。</span><br><span class="line"></span><br><span class="line">​ 关闭文件描述符</span><br><span class="line"></span><br><span class="line">　　同文件权限码一样，用fork函数新建的子进程会从父进程那里继承一些已经打开了的文件。这些被打开的文件可能永远不会被守护进程读写，但它们一样消耗系统资源，而且可能导致所在的文件系统无法卸下。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-1-★★★直接成为守护进程-步骤-★★★"><a href="#2-1-★★★直接成为守护进程-步骤-★★★" class="headerlink" title="2.1 ★★★直接成为守护进程(步骤)★★★"></a>2.1 ★★★直接成为守护进程(步骤)★★★</h2><h3 id="2-11-脱离终端控制，成为后台进程"><a href="#2-11-脱离终端控制，成为后台进程" class="headerlink" title="2.11 脱离终端控制，成为后台进程"></a>2.11 脱离终端控制，成为后台进程</h3><ol>
+<li><p><code>fork()</code>创建子进程，父进程 <code>exit()</code>退出</p>
+</li>
+<li><p>这是创建守护进程的第一步。由于守护进程是脱离控制终端的，因此，完成第一步后就会在Shell终端里造成程序已经运行完毕的假象。之后的所有工作都在子进程中完成，而用户在 <strong>Shell</strong> 终端里则可以执行其他命令，从而在形式上做到了与控制终端的脱离，在后台工作。</p>
+</li>
+</ol>
+<ul>
+<li>为什么要 <strong>fork</strong> ：<code>fork()</code>子进程后，使用<code>exit()</code>退出父进程，<strong>Shell</strong> 便认为父进程终止了，不再挂在终端上，因此可以使得子进程脱离终端控制，同时由于子进程一定在父进程所在的进程组中，因此它一定不是进程组长，所以才能保证下一步<code>setid()</code>的成功调用。</li>
+</ul>
+<h3 id="2-12-创建新的会话-session"><a href="#2-12-创建新的会话-session" class="headerlink" title="2.12 创建新的会话(session)"></a>2.12 创建新的会话(session)</h3><ul>
+<li>只有该进程不是进程组长时，才会创建新的会话期。</li>
+<li>在调用了 <code>fork()</code> 函数后，子进程全盘拷贝了父进程的会话期、进程组、控制终端等，虽然父进程退出了，但会话期、进程组、控制终端等并没有改变，因此，这还不是真正意义上的独立开来，而 <code>setsid()</code> 函数能够使进程完全独立出来。</li>
+</ul>
+<ol>
+<li>摆脱原会话的控制。该进程变成新会话期的首进程</li>
+<li>摆脱原进程组。成为一个新进程组的组长</li>
+<li>摆脱终端控制。如果在调用 <code>setsid() </code>前，该进程有控制终端，那么与该终端的联系被解除。 如果该进程是一个进程组的组长，此函数返回错误。</li>
+</ol>
+<h3 id="2-13-再次fork孙进程，让子进程退出"><a href="#2-13-再次fork孙进程，让子进程退出" class="headerlink" title="2.13 再次fork孙进程，让子进程退出"></a>2.13 再次fork孙进程，让子进程退出</h3><ul>
+<li>因为会话组的组长有权限重新打开控制终端，所以这里第二次调用<code>fork()</code>将子进程结束，留着孙进程，孙进程不是会话组的组长所以没有权利再打开控制终端，这样整个程序就与控制终端隔离了。</li>
+</ul>
+<h3 id="2-14-更改子进程的工作目录"><a href="#2-14-更改子进程的工作目录" class="headerlink" title="2.14 更改子进程的工作目录"></a>2.14 更改子进程的工作目录</h3><p><a href="%5B(36%E6%9D%A1%E6%B6%88%E6%81%AF">源自网站</a> 【Linux编程】守护进程(daemon)详解与创建_mick_seu的博客-CSDN博客_daemon()](<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/woxiaohahaa/article/details/53487602">https://blog.csdn.net/woxiaohahaa/article/details/53487602<i class="fas fa-external-link-alt"></i></a>))</p>
+<ol>
+<li><p>在子进程中调用 <code>chdir()</code> 函数，让根目录 <code>/</code> 成为子进程的工作目录.。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">这一步也是必要的步骤。使用fork创建的子进程继承了父进程的当前工作目录。由于在进程运行中，当前目录所在的文件系统（如“/mnt/usb”）是不能卸载的，这对以后的使用会造成诸多的麻烦（比如系统由于某种原因要进入单用户模式）。因此，通常的做法是让&quot;/&quot;作为守护进程的当前工作目录，这样就可以避免上述的问题，当然，如有特殊需要，也可以把当前工作目录换成其他的路径，如/tmp。改变工作目录的常见函数是chdir。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-15-重设文件权限掩码"><a href="#2-15-重设文件权限掩码" class="headerlink" title="2.15 重设文件权限掩码"></a>2.15 重设文件权限掩码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件权限掩码是指屏蔽掉文件权限中的对应位。比如，有个文件权限掩码是050，它就屏蔽了文件组拥有者的可读与可执行权限。由于使用fork函数新建的子进程继承了父进程的文件权限掩码，这就给该子进程使用文件带来了诸多的麻烦。因此，把文件权限掩码设置为0，可以大大增强该守护进程的灵活性。设置文件权限掩码的函数是umask。在这里，通常的使用方法为umask(0)。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-16-在子进程中关闭不需要的文件描述符"><a href="#2-16-在子进程中关闭不需要的文件描述符" class="headerlink" title="2.16 在子进程中关闭不需要的文件描述符"></a>2.16 在子进程中关闭不需要的文件描述符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">同文件权限码一样，用fork函数新建的子进程会从父进程那里继承一些已经打开了的文件。这些被打开的文件可能永远不会被守护进程读写，但它们一样消耗系统资源，而且可能导致所在的文件系统无法卸下。</span><br><span class="line">在上面的第二步之后，守护进程已经与所属的控制终端失去了联系。因此从终端输入的字符不可能达到守护进程，守护进程中用常规方法（如printf）输出的字符也不可能在终端上显示出来。所以，文件描述符为0、1和2 的3个文件（常说的输入、输出和报错）已经失去了存在的价值，也应被关闭。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-17-代码"><a href="#2-17-代码" class="headerlink" title="2.17 代码"></a>2.17 代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//test2.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;signal.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/param.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">my_daemon</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">pid_t</span> pid;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line"><span class="comment">//创建子进程</span></span><br><span class="line">	pid=fork();</span><br><span class="line">	<span class="keyword">if</span>(pid&gt;<span class="number">0</span>)&#123;    <span class="comment">//如果成功，退出父进程</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;子进程号：%d&quot;</span>,pid);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(pid&lt;<span class="number">0</span>)   <span class="comment">//如果失败</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">	setsid();    <span class="comment">//子进程脱离原会话，成为新的session leader</span></span><br><span class="line">	pid=fork();  <span class="comment">//创建孙进程</span></span><br><span class="line">	<span class="keyword">if</span>(pid&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;孙进程号：%d&quot;</span>,pid);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(pid&lt;<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">	umask(<span class="number">0</span>); <span class="comment">//文件权限掩码</span></span><br><span class="line">	chdir(<span class="string">&quot;/&quot;</span>); <span class="comment">//设置工作目录为根目录</span></span><br><span class="line">	signal(SIGCHLD,SIG_IGN);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="number">1752846</span>);</span><br><span class="line">		sleep(<span class="number">5</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	my_daemon();</span><br><span class="line">	func();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-守护进程的进程标识、父进程"><a href="#2-2-守护进程的进程标识、父进程" class="headerlink" title="2.2 守护进程的进程标识、父进程"></a>2.2 守护进程的进程标识、父进程</h2><p>程序作为守护进程运行，命令行功能不受阻碍，<code>jobs</code>显示无，说明进程已经脱离了该终端的控制。</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220118120933333.png" alt="image-20220118120933333"></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220118122241479.png" alt="image-20220118122241479"></p>
+<p><code>ps l -C+可执行文件名</code> 可以查看守护进程信息，其父进程为<code>1</code>。</p>
+<p><code>?</code>表示不属于任何终端。</p>
+<p><code>ps -A</code>可以查看所有进程</p>
+<h2 id="2-3-在其他控制台看守护进程"><a href="#2-3-在其他控制台看守护进程" class="headerlink" title="2.3 在其他控制台看守护进程"></a>2.3 在其他控制台看守护进程</h2><p>可以查看。</p>
+<h2 id="2-4-如果ctrl-D退出会怎样？"><a href="#2-4-如果ctrl-D退出会怎样？" class="headerlink" title="2.4 如果ctrl+D退出会怎样？"></a>2.4 如果ctrl+D退出会怎样？</h2><p>守护进程不受影响，依然在运行。</p>
+<h2 id="2-5-再次登录控制台"><a href="#2-5-再次登录控制台" class="headerlink" title="2.5 再次登录控制台"></a>2.5 再次登录控制台</h2><p>重新登里后，守护进程依然在运行，但是打印信息并不会出现在终端上了。</p>
+<h1 id="3-守护进程再次分裂子进程（僵尸进程的处理）"><a href="#3-守护进程再次分裂子进程（僵尸进程的处理）" class="headerlink" title="3. 守护进程再次分裂子进程（僵尸进程的处理）"></a>3. 守护进程再次分裂子进程（僵尸进程的处理）</h1><p><code>fork()</code>函数调用一次，返回两次，因为产生了一个子进程。</p>
+<ol>
+<li>当前是父进程，则返回创建的子进程的 <strong>ID</strong> 。</li>
+<li>当前是子进程，返回 <strong>0</strong> 。</li>
+<li>出现错误，返回 __负数__。</li>
+</ol>
+<h2 id="3-1-作业，分裂进程"><a href="#3-1-作业，分裂进程" class="headerlink" title="3.1 作业，分裂进程"></a>3.1 作业，分裂进程</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span>#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span>#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span>#<span class="meta-keyword">include</span> <span class="meta-string">&lt;signal.h&gt;</span>#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/param.h&gt;</span>#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span>#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span>#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span><span class="comment">//子进程void child_process()&#123;    pid_t pid,ppid;    for(int i=0;i&lt;3;i++)&#123;        pid=getpid();        ppid=getppid();        printf(&quot;%d-%d-1752846-sub\n&quot;,pid,ppid);        sleep(25);    &#125;&#125;int main()&#123;    int Max=10;    pid_t pid,ppid;    while(Max)&#123;        Max--;        pid=fork();        if(pid==0)&#123;            child_process();            exit(0);   //子进程循环3次后结束        &#125;        sleep(3);    &#125;    while(1)&#123;        pid=getpid();        ppid=getppid();        printf(&quot;%d-%d-1752846-main\n&quot;,pid,ppid);        sleep(5);    &#125;    return 0;&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-循环-fork"><a href="#3-2-循环-fork" class="headerlink" title="3.2 循环 fork( )"></a>3.2 循环 fork( )</h2><h3 id="3-21-示例1（作业）"><a href="#3-21-示例1（作业）" class="headerlink" title="3.21 示例1（作业）"></a>3.21 示例1（作业）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> a=<span class="number">0</span>;<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;		fork();		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);         a++;	&#125;	<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果是012循环8次。说明<code>fork()</code>得到的子进程继承从父进程<code>fork()</code>之后的语句。</p>
+<p>因此第一次循环，<code>父进程 0</code> 放入缓冲区一个<code>0</code>，产生一个<code>子进程 1</code>，<code>子进程 1</code> 也放入缓冲区一个<code>0</code>。</p>
+<p>第二次循环，<code>父进程 0</code>放入<code>1</code>，产生<code>子进程 2</code>，<code>子进程1</code>也放入<code>1</code>，<code>子进程 2</code> 放入<code>0</code>。<code>子进程1</code>又产生<code>子进程3</code>，也放入<code>0 </code>；此时有0123四个进程，缓冲区内分别是<code>01</code> <code>01</code> <code>0</code> <code>0</code>  </p>
+<p>第三次循环，上面四个进程都飞别再产生一次子进程，然后<code>父进程0</code>结束，子进程跟着结束，</p>
+<p>最后输入<code>012 ...*8</code>（循环8次）。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;x\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>！！注意，如上所示，如果输出语句中带换行符，也就是立即刷新输出，此时二重循环输出 6 次，而不带<code>\n</code>则输出 8 次。我猜测原因在于子进程继承了父进程缓冲区中的内容。</p>
+<p>由于子进程只继承从<code>fork()</code>之后的句子，因此只继承了后半循环部分的循环语句，比如说<code>i=2</code>之后的循环，最后一次循环的子进程则直接跳出循环。</p>
+<ol>
+<li>那么如果不立即刷新缓冲区，会使得缓冲区中的内容被继承，因此这种输出的结果就相当于最后所有进程都输出一次完整序列，如demo中的<code>012</code>。第一次循环后，一共有2个进程，第三次循环后，一共有<code>2^3=8</code>个进程，因此一个产生了 8 个<code>012</code>。</li>
+<li>如果刷新了缓冲区，即带有<code>\n</code>，缓冲区内的东西不会被继承。</li>
+</ol>
+<h3 id="3-22-示例2"><a href="#3-22-示例2" class="headerlink" title="3.22 示例2"></a>3.22 示例2</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;		fork();		<span class="built_in">printf</span>(<span class="string">&quot;X&quot;</span>);	&#125;	<span class="keyword">return</span> <span class="number">0</span>;&#125;<span class="comment">//  输出 8 次 X </span></span><br></pre></td></tr></table></figure>
+
+<p>​    用前面的解释便能说通，此时序列是<code>XX</code>，循环后共 4 个进程，因此产生了 8 个<code>X</code>。</p>
+<h3 id="3-23-示例3"><a href="#3-23-示例3" class="headerlink" title="3.23 示例3"></a>3.23 示例3</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;		fork();		<span class="built_in">printf</span>(<span class="string">&quot;X\n&quot;</span>);	&#125;	<span class="keyword">return</span> <span class="number">0</span>;&#125;<span class="comment">// 输出 6 次 X</span></span><br></pre></td></tr></table></figure>
+
+<p> 缓冲区没东西可被继承，因此第一次循环产生的结果是有两个进程，输出2个<code>X</code>，第二次循环产生4个进程，在输出4个<code>X</code>，所有进程都结束了，因为此时再产生的子进程，已经无法进入循环了，循环次数=2了。</p>
+<h2 id="3-3-僵尸进程"><a href="#3-3-僵尸进程" class="headerlink" title="3.3 僵尸进程"></a>3.3 僵尸进程</h2><p>__僵尸进程__：一个进程使用<code>fork()</code>创建子进程，如果子进程退出，而父进程并没有调用<code>wait</code>或<code>waitpid</code>获取子进程的结束状态信息，那么子进程的进程描述符仍然保存在系统中。这种进程称之为僵死进程。即父进程需要查看一下子进程，验尸。。</p>
+<ul>
+<li>其状态栏显示<code>Z</code>。</li>
+</ul>
+<ol>
+<li>危害：如果进程不调用wait / waitpid的话，那么保留的那段信息就不会释放，其进程号就会一直被占用，但是系统所能使用的进程号是有限的，如果大量的产生<a class="link" target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B">僵尸进程<i class="fas fa-external-link-alt"></i></a>，将因为没有可用的进程号而导致系统不能产生新的进程. 此即为僵尸进程的危害，应当避免。</li>
+<li>用处：由于子进程的结束和父进程的运行是一个异步过程，即父进程永远无法预测子进程 到底什么时候结束，因此子进程释放后会保留相关的信息。</li>
+</ol>
+<h2 id="3-4-如何杀死僵尸进程"><a href="#3-4-如何杀死僵尸进程" class="headerlink" title="3.4 如何杀死僵尸进程"></a>3.4 如何杀死僵尸进程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对于一个定期的产生子进程的父进程，产生的子进程需要做的事情很少，子进程做完该做的事情之后就退出了，故生命周期很短。但是，父进程只管生成新的子进程，至于子进程 退出之后的事情，则一概不闻不问，这样，系统运行上一段时间之后，系统中就会存在很多的僵死进程，倘若用ps命令查看的话，就会看到很多状态为Z的进程。 严格地来说，僵死进程并不是问题的根源，罪魁祸首是产生出大量僵死进程的那个父进程。因此，当我们寻求如何消灭系统中大量的僵死进程时，答案就是把产生大量僵死进程的那个元凶枪毙掉，即通过通过kill发送SIGTERM或者SIGKILL杀死父进程。枪毙了元凶进程之后，它产生的僵死进程就变成了孤儿进程，这些孤儿进程会被init进程接管，init进程会wait()这些孤儿进程，释放它们占用的系统进程表中的资源，这样，这些已经僵死的孤儿进程 就能瞑目而去了</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-如何实现子进程退出后不存在僵尸进程"><a href="#3-5-如何实现子进程退出后不存在僵尸进程" class="headerlink" title="3.5 如何实现子进程退出后不存在僵尸进程"></a>3.5 如何实现子进程退出后不存在僵尸进程</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">signal(SIGCHLD,SIG_IGN);<span class="comment">// 忽略子进程结束的信号，直接交给init进程管理，</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="4-如何杀死守护进程？如何杀死守护进程的子进程"><a href="#4-如何杀死守护进程？如何杀死守护进程的子进程" class="headerlink" title="4. 如何杀死守护进程？如何杀死守护进程的子进程"></a>4. 如何杀死守护进程？如何杀死守护进程的子进程</h1><h3 id="4-1-杀死某个进程"><a href="#4-1-杀死某个进程" class="headerlink" title="4.1 杀死某个进程"></a>4.1 杀死某个进程</h3><p><code>kill+ 进程号</code></p>
+<h2 id="4-2-快速杀死某个父进程所有子进程"><a href="#4-2-快速杀死某个父进程所有子进程" class="headerlink" title="4.2 快速杀死某个父进程所有子进程"></a>4.2 快速杀死某个父进程所有子进程</h2><p><code>pkill -P + 父进程号</code></p>
+<h2 id="4-3-杀死某个进程后，其子进程如何？"><a href="#4-3-杀死某个进程后，其子进程如何？" class="headerlink" title="4.3 杀死某个进程后，其子进程如何？"></a>4.3 杀死某个进程后，其子进程如何？</h2><p><code>PPID</code> 全部变成了 <strong>1</strong> 。</p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220118202024266.png" alt="image-20220118202024266"></p>
+<h2 id="4-4-如何做到杀死某个进程后，自动结束其所有子进程？"><a href="#4-4-如何做到杀死某个进程后，自动结束其所有子进程？" class="headerlink" title="4.4 如何做到杀死某个进程后，自动结束其所有子进程？"></a>4.4 如何做到杀死某个进程后，自动结束其所有子进程？</h2><h1 id="5-守护进程的再次分裂子进程（极限测试）"><a href="#5-守护进程的再次分裂子进程（极限测试）" class="headerlink" title="5. 守护进程的再次分裂子进程（极限测试）"></a>5. 守护进程的再次分裂子进程（极限测试）</h1><h2 id="5-1-分裂数达到多少会分裂失败"><a href="#5-1-分裂数达到多少会分裂失败" class="headerlink" title="5.1 分裂数达到多少会分裂失败"></a>5.1 分裂数达到多少会分裂失败</h2><h2 id="5-2-虚拟机内存为1024MB、2048MB时呢？"><a href="#5-2-虚拟机内存为1024MB、2048MB时呢？" class="headerlink" title="5.2 虚拟机内存为1024MB、2048MB时呢？"></a>5.2 虚拟机内存为1024MB、2048MB时呢？</h2><p><img lazyload src="/images/loading.svg" data-src="image-20220118214106147.png" alt="image-20220118214106147"></p>
+<p><img lazyload src="/images/loading.svg" data-src="image-20220118214251659.png" alt="image-20220118214251659"></p>
+<h2 id="5-3-将子进程中字符数组扩大10倍"><a href="#5-3-将子进程中字符数组扩大10倍" class="headerlink" title="5.3 将子进程中字符数组扩大10倍"></a>5.3 将子进程中字符数组扩大10倍</h2><p>与单个进程所占用内存无关？因为即使将数组设置为大小<code>1</code>也是如此。</p>
+<h2 id="5-4"><a href="#5-4" class="headerlink" title="5.4"></a>5.4</h2>
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="../../29/%E4%BA%8C%E5%88%86%E6%B3%95/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">二分法</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="../Makefile/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Makefile</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">小华</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="nav-text">守护进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%AD%A3%E5%B8%B8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E5%8F%8A%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2"><span class="nav-text">1. 正常程序的后台运行及前后台切换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F"><span class="nav-text">1.1 示例程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">1.2 后台运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E5%BC%80%E5%A7%8B%E6%97%B6%E8%AE%BE%E5%AE%9A%E4%B8%BA%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">1.2.1 开始时设定为后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E4%BD%9C%E4%B8%9A%E5%92%8C%E8%BF%9B%E7%A8%8B"><span class="nav-text">1.2.2 作业和进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-%E5%9C%A8%E5%90%AF%E5%8A%A8%E5%90%8E%E5%88%87%E6%8D%A2%E5%88%B0%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-text">1.2.3 在启动后切换到后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-24%E9%97%AE%E9%A2%98"><span class="nav-text">1.24问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E7%94%A8%E9%80%94%E3%80%81%E7%88%B6%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">2. 守护进程的作用、用途、父进程标识的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E2%98%85%E2%98%85%E2%98%85%E7%9B%B4%E6%8E%A5%E6%88%90%E4%B8%BA%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-%E6%AD%A5%E9%AA%A4-%E2%98%85%E2%98%85%E2%98%85"><span class="nav-text">2.1 ★★★直接成为守护进程(步骤)★★★</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-11-%E8%84%B1%E7%A6%BB%E7%BB%88%E7%AB%AF%E6%8E%A7%E5%88%B6%EF%BC%8C%E6%88%90%E4%B8%BA%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.11 脱离终端控制，成为后台进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-12-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E4%BC%9A%E8%AF%9D-session"><span class="nav-text">2.12 创建新的会话(session)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-13-%E5%86%8D%E6%AC%A1fork%E5%AD%99%E8%BF%9B%E7%A8%8B%EF%BC%8C%E8%AE%A9%E5%AD%90%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA"><span class="nav-text">2.13 再次fork孙进程，让子进程退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-14-%E6%9B%B4%E6%94%B9%E5%AD%90%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">2.14 更改子进程的工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-15-%E9%87%8D%E8%AE%BE%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E6%8E%A9%E7%A0%81"><span class="nav-text">2.15 重设文件权限掩码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-16-%E5%9C%A8%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%AD%E5%85%B3%E9%97%AD%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9A%84%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-text">2.16 在子进程中关闭不需要的文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-17-%E4%BB%A3%E7%A0%81"><span class="nav-text">2.17 代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%A0%87%E8%AF%86%E3%80%81%E7%88%B6%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.2 守护进程的进程标识、父进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%9C%A8%E5%85%B6%E4%BB%96%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9C%8B%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="nav-text">2.3 在其他控制台看守护进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%A6%82%E6%9E%9Cctrl-D%E9%80%80%E5%87%BA%E4%BC%9A%E6%80%8E%E6%A0%B7%EF%BC%9F"><span class="nav-text">2.4 如果ctrl+D退出会怎样？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%86%8D%E6%AC%A1%E7%99%BB%E5%BD%95%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="nav-text">2.5 再次登录控制台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%86%8D%E6%AC%A1%E5%88%86%E8%A3%82%E5%AD%90%E8%BF%9B%E7%A8%8B%EF%BC%88%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%A4%84%E7%90%86%EF%BC%89"><span class="nav-text">3. 守护进程再次分裂子进程（僵尸进程的处理）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E4%BD%9C%E4%B8%9A%EF%BC%8C%E5%88%86%E8%A3%82%E8%BF%9B%E7%A8%8B"><span class="nav-text">3.1 作业，分裂进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%BE%AA%E7%8E%AF-fork"><span class="nav-text">3.2 循环 fork( )</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-21-%E7%A4%BA%E4%BE%8B1%EF%BC%88%E4%BD%9C%E4%B8%9A%EF%BC%89"><span class="nav-text">3.21 示例1（作业）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-22-%E7%A4%BA%E4%BE%8B2"><span class="nav-text">3.22 示例2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-23-%E7%A4%BA%E4%BE%8B3"><span class="nav-text">3.23 示例3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="nav-text">3.3 僵尸进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%A6%82%E4%BD%95%E6%9D%80%E6%AD%BB%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="nav-text">3.4 如何杀死僵尸进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%AD%90%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E5%90%8E%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="nav-text">3.5 如何实现子进程退出后不存在僵尸进程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%A6%82%E4%BD%95%E6%9D%80%E6%AD%BB%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%EF%BC%9F%E5%A6%82%E4%BD%95%E6%9D%80%E6%AD%BB%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%AD%90%E8%BF%9B%E7%A8%8B"><span class="nav-text">4. 如何杀死守护进程？如何杀死守护进程的子进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="nav-text">4.1 杀死某个进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%BF%AB%E9%80%9F%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E7%88%B6%E8%BF%9B%E7%A8%8B%E6%89%80%E6%9C%89%E5%AD%90%E8%BF%9B%E7%A8%8B"><span class="nav-text">4.2 快速杀死某个父进程所有子进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E8%BF%9B%E7%A8%8B%E5%90%8E%EF%BC%8C%E5%85%B6%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%A6%82%E4%BD%95%EF%BC%9F"><span class="nav-text">4.3 杀死某个进程后，其子进程如何？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E6%9D%80%E6%AD%BB%E6%9F%90%E4%B8%AA%E8%BF%9B%E7%A8%8B%E5%90%8E%EF%BC%8C%E8%87%AA%E5%8A%A8%E7%BB%93%E6%9D%9F%E5%85%B6%E6%89%80%E6%9C%89%E5%AD%90%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-text">4.4 如何做到杀死某个进程后，自动结束其所有子进程？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%86%8D%E6%AC%A1%E5%88%86%E8%A3%82%E5%AD%90%E8%BF%9B%E7%A8%8B%EF%BC%88%E6%9E%81%E9%99%90%E6%B5%8B%E8%AF%95%EF%BC%89"><span class="nav-text">5. 守护进程的再次分裂子进程（极限测试）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E5%88%86%E8%A3%82%E6%95%B0%E8%BE%BE%E5%88%B0%E5%A4%9A%E5%B0%91%E4%BC%9A%E5%88%86%E8%A3%82%E5%A4%B1%E8%B4%A5"><span class="nav-text">5.1 分裂数达到多少会分裂失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E4%B8%BA1024MB%E3%80%812048MB%E6%97%B6%E5%91%A2%EF%BC%9F"><span class="nav-text">5.2 虚拟机内存为1024MB、2048MB时呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E5%B0%86%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%AD%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E6%89%A9%E5%A4%A710%E5%80%8D"><span class="nav-text">5.3 将子进程中字符数组扩大10倍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4"><span class="nav-text">5.4</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

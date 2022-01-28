@@ -9,7 +9,7 @@
     
     <title>
         
-            pictest |
+            https加密 |
         
         小华的笔记
     </title>
@@ -163,7 +163,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">pictest</span>
+            <span class="title-hover-animation">https加密</span>
         </div>
 
         
@@ -182,8 +182,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-01-28 12:37:51</span>
-        <span class="mobile">2022-01-28 12:37</span>
+        <span class="pc">2022-01-28 22:06:11</span>
+        <span class="mobile">2022-01-28 22:06</span>
     </span>
     
     
@@ -191,12 +191,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>14 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>921 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
         </span>
     
     
@@ -212,15 +212,20 @@
         
 
         <div class="article-content markdown-body">
-            <img lazyload src="/images/loading.svg" data-src="yeren.jpg" width="10%" height="10%">
-
-
-
-
-
-<p><img lazyload src="/images/loading.svg" data-src="yeren.jpg" alt="野人"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <h1 id="https-加密原理"><a href="#https-加密原理" class="headerlink" title="https 加密原理"></a>https 加密原理</h1><p>http 是明文传输，所以服务端和客户端在传输数据时相当于裸奔，很容易被施行中间人攻击。</p>
+<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>通信双方各有一把相同的钥匙，既可以加密也可以解密，对称加密的加密速度、解密速度快，但是问题在于如何传输以及保存这个相同的密钥，显然不能直接明文传输，因此就必须依赖__非对称加密__。常用的方法是只将对称加密的密钥进行__非对称加密__然后传输，要传输的内容便可采用对称加密。</p>
+<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>有以下的几种用法，假设你是客户端，<code>A</code>是服务器。</p>
+<h3 id="1-加密"><a href="#1-加密" class="headerlink" title="1. 加密"></a>1. 加密</h3><p>拥有两个不同的公钥、私钥，公、私钥可互相配对锁定、解锁。即公钥、私钥都可以加密，但都必须通过另一方解密。</p>
+<p>私钥只有一个供自己使用，公钥可以分发给想要跟你通信的其他人，要跟你通信就必须要用你给的公钥进行加密，然后你再用私钥解密即可保证信息不会泄露。（用接收方的公钥加密，接收方得到后用自己的私钥解密）</p>
+<h3 id="2-验证身份（数字签名）"><a href="#2-验证身份（数字签名）" class="headerlink" title="2. 验证身份（数字签名）"></a>2. 验证身份（数字签名）</h3><p>由于你的公钥可以被很多人拥有，但假如你只想接收<code>A</code>的信息，你怎么确认这个信息是<code>A</code>发来的而不是其他人冒充的呢或者说没有被别人篡改呢？这就要用到 <strong>数字签名</strong> 。</p>
+<p>数字签名的生成要用<code>A</code>（发送方）的私钥加密（普通加密过程是用接收方的公钥加密）。发送方<code>A</code>（比如服务器）先把要发送的内容经过 <strong>Hash</strong> 处理生成一个摘要，然后把摘要用<code>A</code>私钥加密形成签名，连同报文内容一起，用你的公钥加密然后发送给你。这时候你要用你的私钥解密<code>A</code>发送过来的东西，得到 数字签名+报文，由于数字签名还有一层加密，你要用<code>A</code>的公钥进行解密得到hash值（摘要1），然后你对得到的报文执行同样的<code>Hash</code>处理生成一个摘要2，如果和<code>A</code>发送过来的摘要1对比无误就可确认报文未被篡改。此过程要用到两套公、私钥，即一对<code>A</code>的，一对你自己的。</p>
+<ul>
+<li><p>验证身份：由于你用<code>A</code>的公钥可以解开它的数字签名就说明是<code>A</code>发送的。假如<code>B</code>想冒充<code>A</code>跟你通信，它虽然拥有你的公钥，但是他的数字签名没法造假，因为它没有<code>A</code>的私钥，不能形成<code>A</code>的数字签名。</p>
+</li>
+<li><p>防止篡改：说报文被<code>B</code>篡改了，那么你得到的<code>hash</code>摘要和数字签名里的摘要一定不同，就可以判断出报文被篡改了。</p>
+</li>
+</ul>
+<h3 id="3-数字证书"><a href="#3-数字证书" class="headerlink" title="3. 数字证书"></a>3. 数字证书</h3><p>上面的措施还不能保证安全，比如说<code>B</code>把你拥有的<code>A</code>的公钥偷偷换成了它自己的，那么上述的验证身份便自然而然的通过了，那么你怎么保证你拥有的<code>A</code>的公钥是不是真正的<code>A</code>的公钥呢？就要通过一个权威认证机构做公证人。认证中心用自己的私钥把<code>A</code>的公钥和相关信息加密，发送给你（客户端），客户端内置了认证中心的私钥，解密后得到便是真正的<code>A</code>的公钥，便可以进一步验证身份。</p>
 
         </div>
 
@@ -234,13 +239,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="../https%E5%8A%A0%E5%AF%86/"
+                           href="../Makefile/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">https加密</span>
+                                <span class="post-nav-title-item">Makefile</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -250,10 +255,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="../C++%E7%AC%94%E8%AE%B01/"
+                           href="../pictest/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">C++笔记1</span>
+                                <span class="post-nav-title-item">pictest</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -378,7 +383,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#https-%E5%8A%A0%E5%AF%86%E5%8E%9F%E7%90%86"><span class="nav-text">https 加密原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="nav-text">非对称加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8A%A0%E5%AF%86"><span class="nav-text">1. 加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%AA%8C%E8%AF%81%E8%BA%AB%E4%BB%BD%EF%BC%88%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%EF%BC%89"><span class="nav-text">2. 验证身份（数字签名）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6"><span class="nav-text">3. 数字证书</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
