@@ -14,9 +14,9 @@
         小华的笔记
     </title>
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="../../../../css/style.css">
 
-    <link rel="shortcut icon" href="/images/fastman.jpg">
+    <link rel="shortcut icon" href="../../../../images/fastman.jpg">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
@@ -60,7 +60,7 @@
                     
                         <li class="menu-item">
                             <a class=""
-                               href="/"
+                               href="../../../../index.html"
                             >
                                 主页
                             </a>
@@ -68,7 +68,7 @@
                     
                         <li class="menu-item">
                             <a class=""
-                               href="/categories"
+                               href="../../../../categories"
                             >
                                 分类
                             </a>
@@ -76,7 +76,7 @@
                     
                         <li class="menu-item">
                             <a class=""
-                               href="/tags"
+                               href="../../../../tags"
                             >
                                 标签
                             </a>
@@ -84,7 +84,7 @@
                     
                         <li class="menu-item">
                             <a class=""
-                               href="/archives"
+                               href="../../../../archives"
                             >
                                 归档
                             </a>
@@ -92,7 +92,7 @@
                     
                         <li class="menu-item">
                             <a class=""
-                               href="/about"
+                               href="../../../../about"
                             >
                                 关于
                             </a>
@@ -121,27 +121,27 @@
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/">主页</a>
+                       href="../../../../index.html">主页</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/categories">分类</a>
+                       href="../../../../categories">分类</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/tags">标签</a>
+                       href="../../../../tags">标签</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/archives">归档</a>
+                       href="../../../../archives">归档</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/about">关于</a>
+                       href="../../../../about">关于</a>
                 </li>
             
         </ul>
@@ -169,7 +169,7 @@
         
             <div class="article-header">
                 <div class="avatar">
-                    <img src="/images/fastman.jpg">
+                    <img src="../../../../images/fastman.jpg">
                 </div>
                 <div class="info">
                     <div class="author">
@@ -191,7 +191,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/c/">c++</a>&nbsp;
+                        <a href="../../../../categories/c/">c++</a>&nbsp;
                     </li>
                 
             </ul>
@@ -228,7 +228,7 @@
 <li><p>成员函数属于类而数据成员属于对象</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">char</span> *name;</span><br><span class="line">&#125;N;<span class="comment">//用N代替Student</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> *N;</span><br><span class="line">N p;<span class="comment">//p为int*类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> array[<span class="number">10</span>];</span><br><span class="line">array a;<span class="comment">//相当于int a[10];</span></span><br><span class="line"><span class="comment">//把变量名替换成新类名</span></span><br></pre></td></tr></table></figure></li>
 <li><p>构造函数（默认与重载）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ClassA</span>();<span class="comment">//无参构造函数，默认构造函数</span></span><br><span class="line"><span class="built_in">ClassA</span>(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c=<span class="number">10</span>);<span class="comment">//重载</span></span><br><span class="line"><span class="built_in">ClassA</span>(<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>);<span class="comment">//全部为默认参数，属于默认构造函数，</span></span><br><span class="line"><span class="comment">//在声明时指定默认值，而不需要在定义时再指出来</span></span><br><span class="line">ClassA x;</span><br><span class="line">      </span><br><span class="line"><span class="comment">//只能有一个默认构造函数，而且最好不要把有默认参数的构造函数和重载放在一起使用</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ClassA</span>();<span class="comment">//无参构造函数，默认构造函数</span></span><br><span class="line"><span class="built_in">ClassA</span>(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c=<span class="number">10</span>);<span class="comment">//重载</span></span><br><span class="line"><span class="built_in">ClassA</span>(<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>);<span class="comment">//全部为默认参数，属于默认构造函数，</span></span><br><span class="line"><span class="comment">//在声明时指定默认值，而不需要在定义时再指出来</span></span><br><span class="line">ClassA x;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//只能有一个默认构造函数，而且最好不要把有默认参数的构造函数和重载放在一起使用</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </blockquote>
 <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><blockquote>
@@ -313,7 +313,7 @@
 <p>==在C/C++中，当数组作为函数的参数进行传递时，数组就自动退化为同类型的指针==</p>
 </blockquote>
 <blockquote>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/zou_albert/article/details/107340770" >CSDN<i class="fas fa-external-link-alt"></i></a>，这里第一个例子中当data数组经过一个函数传进去之后，在里面就变成指针类型了。</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/zou_albert/article/details/107340770">CSDN<i class="fas fa-external-link-alt"></i></a>，这里第一个例子中当data数组经过一个函数传进去之后，在里面就变成指针类型了。</p>
 </blockquote>
 <ul>
 <li>一维数组</li>
@@ -332,19 +332,14 @@
 <p><strong>new</strong> 函数返回值是开辟内存的地址，如果要开辟一个指针数组，那么只能将值返回给一个二级指针，因为返回值是指向指针的指针。固不能用int * q=new int *[10];</p>
 <p><strong>malloc</strong> 函数也是如此。</p>
 </blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://img-blog.csdn.net/20161023184826969"
-                      alt="二维数组结构："
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="https://img-blog.csdn.net/20161023184826969" alt="二维数组结构："></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;row;i++)</span><br><span class="line">&gt;&#123;</span><br><span class="line"> <span class="keyword">delete</span> []p[i]; <span class="comment">//删除所有的行数组空间，p[i]为指针变量，前面的[]代表指向的是一个数组空间，删除每一行</span></span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;<span class="keyword">delete</span> []p; <span class="comment">//删除p指向的列空间</span></span><br><span class="line">&gt;p=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment">//malloc</span></span><br><span class="line"></span><br><span class="line">&gt;<span class="keyword">int</span> **p=<span class="literal">NULL</span>,i=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&gt;p=(<span class="keyword">int</span> **)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span> *)*SIZE);</span><br><span class="line"></span><br><span class="line">&gt;<span class="keyword">for</span>(;i&lt;SIZE;i++)</span><br><span class="line">&gt;&#123;</span><br><span class="line"> *(p+i)=(<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span> )*<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><input checked="" disabled="" type="checkbox"> ==二维数组作为返回值该怎么写?==，<code>int **</code>和<code>int[][10]</code>的区别；见下程序已知列数的malloc返回值。</li>
-<li><input checked="" disabled="" type="checkbox"> 返回指针数组时用 <code>**</code></li>
+<li><input checked disabled type="checkbox"> ==二维数组作为返回值该怎么写?==，<code>int **</code>和<code>int[][10]</code>的区别；见下程序已知列数的malloc返回值。</li>
+<li><input checked disabled type="checkbox"> 返回指针数组时用 <code>**</code></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">&gt;<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line">&gt;<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">&gt;<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">&gt;<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//动态二维数组</span></span><br><span class="line">   <span class="comment">//new版本</span></span><br><span class="line">   <span class="keyword">int</span> **p = <span class="literal">NULL</span>;</span><br><span class="line">   p = <span class="keyword">new</span> <span class="keyword">int</span> *[<span class="number">3</span>];</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">       p[i] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>;j++)&#123;</span><br><span class="line">           p[i][j] = i * <span class="number">3</span> + (j + <span class="number">1</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>;j++)&#123;</span><br><span class="line">           cout &lt;&lt; p[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       cout &lt;&lt; endl;</span><br><span class="line">   &#125;</span><br><span class="line">   cout &lt;&lt; endl;</span><br><span class="line">   <span class="comment">//malloc版本</span></span><br><span class="line">   <span class="keyword">int</span> **q = <span class="number">0</span>;</span><br><span class="line">   q = (<span class="keyword">int</span> **)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span> *) * <span class="number">3</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">       q[i] = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>) * <span class="number">3</span>);</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>;j++)&#123;</span><br><span class="line">           q[i][j] = i * <span class="number">3</span> + j + <span class="number">1</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>;j++)&#123;</span><br><span class="line">           cout &lt;&lt; q[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       cout &lt;&lt; endl;</span><br><span class="line">   &#125;</span><br><span class="line">   cout &lt;&lt; endl;</span><br><span class="line">   <span class="comment">/***********************************************************************/</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//动态二维数组（已知列长）</span></span><br><span class="line">   <span class="comment">//new</span></span><br><span class="line">   <span class="built_in"><span class="keyword">int</span></span>(*r)[<span class="number">3</span>];<span class="comment">//相当于指定了每一行行长度（即列数），再开辟n行</span></span><br><span class="line">   r = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">3</span>];</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>;i++)&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>;j++)&#123;</span><br><span class="line">           r[i][j] = i * <span class="number">3</span> + j + <span class="number">1</span>;</span><br><span class="line">           cout &lt;&lt; r[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       cout &lt;&lt; endl;</span><br><span class="line">   &#125;</span><br><span class="line">   cout &lt;&lt; endl;</span><br><span class="line">   <span class="comment">//malloc</span></span><br><span class="line">   <span class="built_in"><span class="keyword">int</span></span>(*s)[<span class="number">2</span>];</span><br><span class="line">   s = (<span class="built_in"><span class="keyword">int</span></span> (*)[<span class="number">2</span>])<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>)*<span class="number">3</span>*<span class="number">2</span>); <span class="comment">//注意这是指定了2列，s类型应当为int(*)[2],即2列的行指针类型，因此若写函数返回值时，就这样写。int *[2]</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>;i++)&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>;j++)&#123;</span><br><span class="line">           s[i][j] = i * <span class="number">3</span> + j + <span class="number">1</span>;</span><br><span class="line">           cout &lt;&lt; s[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       cout &lt;&lt; endl;</span><br><span class="line">   &#125;</span><br><span class="line">&gt;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -352,8 +347,8 @@
 </blockquote>
 <blockquote>
 <ul>
-<li><input disabled="" type="checkbox"> while</li>
-<li><input disabled="" type="checkbox"> 形参不是const指针，不能传入const指针。而形参是const指针，既可以传入const也可以传入非const；</li>
+<li><input disabled type="checkbox"> while</li>
+<li><input disabled type="checkbox"> 形参不是const指针，不能传入const指针。而形参是const指针，既可以传入const也可以传入非const；</li>
 </ul>
 </blockquote>
 <h2 id="指针-和引用-amp-做参数的区别"><a href="#指针-和引用-amp-做参数的区别" class="headerlink" title="指针*和引用&amp;做参数的区别"></a>指针*和引用&amp;做参数的区别</h2><blockquote>
@@ -384,12 +379,7 @@
 <h2 id="二维数组与指针"><a href="#二维数组与指针" class="headerlink" title="二维数组与指针"></a>二维数组与指针</h2><blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&gt;</span>&#123;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">3</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *p = a[<span class="number">1</span>];</span><br><span class="line"><span class="comment">//int *q = a + 1;</span></span><br><span class="line">cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; a + <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; &amp;a[<span class="number">1</span>] &lt;&lt; endl; <span class="comment">//行地址</span></span><br><span class="line">cout &lt;&lt; a[<span class="number">0</span>] &lt;&lt;<span class="string">&quot; &quot;</span> &lt;&lt; *(a+<span class="number">1</span>) &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;a[<span class="number">1</span>];<span class="comment">//元素地址（某行第一个元素的地址）</span></span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="C++%E7%AC%94%E8%AE%B01/image-20210822203018863.png"
-                      alt="image-20210822203018863"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822203018863.png" alt="image-20210822203018863"></p>
 <p>从上述代码的输出结果来看，好像两行是完全一致，事实上二组值意义完全不同。</p>
 <p>第一组表示的是行向量的  ==行地址==，而第二组代表的是对于行的==0列地址==。</p>
 <hr>
@@ -399,39 +389,17 @@
 
 
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822205834491.png"
-                      alt="image-20210822205834491"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822204416280.png"
-                      alt="image-20210822204416280"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822205210603.png"
-                      alt="image-20210822205210603"
-                ></p>
+<img lazyload src="/images/loading.svg" data-src="./C++笔记1/image-20210822205834491.png" width="50%" height="50%">
+
+<img lazyload src="/images/loading.svg" data-src="./C++笔记1/image-20210822204416280.png" width="50%" height="50%">
+
+<p><img lazyload src="/images/loading.svg" data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822204416280.png" alt="image-20210822204416280"></p>
+<p><img lazyload src="/images/loading.svg" data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822205210603.png" alt="image-20210822205210603"></p>
 <hr>
 <p>二维数组在内存中连续存放，下图乍一看很秀的样子，其实都是利用了这一特性，p为列地址（第一行第一个元素），自增后指向第一行第二个，第一行结束后自增会指向第二行第一个元素，因为连续存放。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822213038259.png"
-                      alt="image-20210822213038259"
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="./C++%E7%AC%94%E8%AE%B01/image-20210822213038259.png" alt="image-20210822213038259"></p>
 <hr>
-<h4 id="这题很牛啊"><a href="#这题很牛啊" class="headerlink" title="这题很牛啊"></a>这题很牛啊</h4><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="./C++笔记1/image-20210823220145069.png"
-                      alt="image-20210823220145069" style="zoom:50%;" 
-                >
+<h4 id="这题很牛啊"><a href="#这题很牛啊" class="headerlink" title="这题很牛啊"></a>这题很牛啊</h4><img lazyload src="/images/loading.svg" data-src="./C++笔记1/image-20210823220145069.png" alt="image-20210823220145069" style="zoom:50%;">
 
 <p>字符串其实就是一个个首地址，首先把四个字符串的首地址存放在一个指针数组里，即现在有4个指向这些字符串的指针，只要对这4个指针解引用<code>*</code> 即可得到四个字符串的地址，<code>cout+首地址</code>会输出整个字符串直到遇到<code>&#39;\0&#39;</code>。</p>
 <p>新建一个指针数组 p，里面4个指针元素指向<code>c+i</code>（p[0]=*p+0=c+3） ，<code>c+i</code> 的意思是数组 c 四个元素（即前面的4个指针）的地址（因为<code>*(c+i)==c[i]</code>）。然后让指针 pp 指向 p 的首位，即 pp 中存放的是数组 p 第一个元素的位置。</p>
@@ -467,7 +435,7 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/01/28/pictest/"
+                           href="../pictest/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
@@ -483,7 +451,7 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/01/28/helloworld/"
+                           href="../helloworld/"
                         >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">helloworld</span>
